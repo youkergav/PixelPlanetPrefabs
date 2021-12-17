@@ -21,6 +21,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
     [Range(1f, 10f)] public float LavaSeed = 1f;
 
     [Header("Misc")]
+    public bool CratersEnabled = true;
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
     [Range(8f, 256)] public int Pixels = 128;
     [Range(0f, 1f)] public float LavaFlow = 0.4f;
@@ -65,6 +66,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
         SetRotate(Rotation);
         SetLight(LightOrigin);
         SetSpeed(Speed);
+        EnableCraters(CratersEnabled);
 
         UpdateMaterial();
         _Initiated = true;
@@ -162,6 +164,11 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
 
         // Set atmosphere color.
         _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor.Evaluate(1));
+    }
+
+    public void EnableCraters(bool enabled)
+    {
+        _Craters.SetEnabled(enabled);
     }
 
     public void UpdateMaterial()

@@ -109,7 +109,7 @@ MonoBehaviour:
   SurfaceSeed: 1
   CraterSeed: 1
   LightOrigin: {x: 0.3, y: 0.7}
-  Pixels: 33
+  Pixels: 128
 --- !u!1 &5844603311135532725
 GameObject:
   m_ObjectHideFlags: 0

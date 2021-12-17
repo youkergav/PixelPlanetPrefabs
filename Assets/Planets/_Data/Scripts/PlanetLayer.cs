@@ -13,6 +13,11 @@ public class PlanetLayer
         _Material = material;
     }
 
+    public void SetEnabled(bool enabled)
+    {
+        _Renderer.enabled = enabled;
+    }
+
     public void SetMaterialProperty(string key, float value)
     {
         if (isPrefab())
@@ -69,6 +74,7 @@ public class PlanetLayer
         }
     }
 
+    // This is a hack because I am not smart enough to figure it out.
     private bool isPrefab()
     {
         return _GameObject.scene.name == null || _GameObject.scene.name == _GameObject.name;

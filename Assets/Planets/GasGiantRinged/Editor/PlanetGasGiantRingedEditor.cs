@@ -16,6 +16,7 @@ public class PlanetGasGiantRingedEditor : Editor
             planet.SetRotate();
             planet.SetLight(planet.LightOrigin);
             planet.SetSpeed(planet.Speed);
+            planet.EnableRing(planet.RingEnabled);
 
             planet.UpdateMaterial();
         }

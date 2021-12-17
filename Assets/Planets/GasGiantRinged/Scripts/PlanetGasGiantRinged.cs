@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 [ExecuteInEditMode]
-
 public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
 {
     [Header("Transform")]
@@ -19,6 +18,7 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
     [Range(1f, 10f)] public float RingSeed = 1f;
 
     [Header("Misc")]
+    public bool RingEnabled = true;
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
     [Range(8f, 256)] public int Pixels = 128;
 
@@ -54,6 +54,7 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         SetRotate();
         SetLight(LightOrigin);
         SetSpeed(Speed);
+        EnableRing(RingEnabled);
 
         UpdateMaterial();
         _Initiated = true;
@@ -162,6 +163,11 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
 
         _Ring.SetMaterialProperty(ShaderProperties.GradientTex2, PlanetUtil.GenTexture(gradientLight));
         _Ring.SetMaterialProperty(ShaderProperties.GradientTex3, PlanetUtil.GenTexture(gradientDark));
+    }
+
+    public void EnableRing(bool enabled)
+    {
+        _Ring.SetEnabled(enabled);
     }
 
     public void UpdateMaterial()
