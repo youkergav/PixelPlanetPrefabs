@@ -60,7 +60,7 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate(Rotation);
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
 
         UpdateMaterial();
         _Initiated = true;
@@ -109,11 +109,11 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        _Clouds1.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        _Clouds2.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()

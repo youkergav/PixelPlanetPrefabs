@@ -65,7 +65,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate(Rotation);
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
         EnableCraters(CratersEnabled);
 
         UpdateMaterial();
@@ -116,11 +116,11 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Land.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Craters.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Lava.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Land.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        _Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        _Lava.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()

@@ -7,7 +7,8 @@ public class PlanetContinents : MonoBehaviour, PlanetInterface
     [Header("Transform")]
     [Range(0f, 2f)] public float Size = 1.0f;
     [Range(0f, 6.28f)] public float Rotation = 0f;
-    [Range(-1f, 1f)] public float Speed = 0.5f;
+    [Range(-1f, 1f)] public float PlanetSpeed = 0.5f;
+    [Range(-1f, 1f)] public float CloudSpeed = 0.5f;
 
     [Header("Colors")]
     public Gradient LandColor;
@@ -65,7 +66,7 @@ public class PlanetContinents : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate(Rotation);
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
 
         UpdateMaterial();
         _Initiated = true;
@@ -111,11 +112,11 @@ public class PlanetContinents : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Clouds.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Water.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Land.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Clouds.SetMaterialProperty(ShaderProperties.Speed, CloudSpeed);
+        _Water.SetMaterialProperty(ShaderProperties.Speed, PlanetSpeed);
+        _Land.SetMaterialProperty(ShaderProperties.Speed, PlanetSpeed);
     }
 
     public void SetColors()

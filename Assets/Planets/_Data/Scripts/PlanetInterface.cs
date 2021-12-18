@@ -7,7 +7,7 @@ public interface PlanetInterface
     void SetLight(Vector2 position);
     void SetRotate(float rotation);
     void SetSize(float size);
-    void SetSpeed(float speed);
+    void SetSpeed();
     void SetColors();
     void UpdateMaterial();
     void SetStartTime(float time);

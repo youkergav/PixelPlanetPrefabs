@@ -7,7 +7,8 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
     [Range(0f, 2f)] public float Size = 1.0f;
     [Range(0f, 6.28f)] public float PlanetRotation = 0f;
     [Range(0f, 6.28f)] public float RingRotation = 0f;
-    [Range(-1f, 1f)] public float Speed = 0.5f;
+    [Range(-1f, 1f)] public float PlanetSpeed = 0.5f;
+    [Range(-1f, 1f)] public float RingSpeed = 0.5f;
 
     [Header("Colors")]
     public Gradient PlanetColor;
@@ -53,11 +54,11 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate();
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
         EnableRing(RingEnabled);
 
-        UpdateMaterial();
         _Initiated = true;
+        UpdateMaterial();
     }
 
     public void SetSeed()
@@ -97,10 +98,10 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Ring.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Planet.SetMaterialProperty(ShaderProperties.Speed, PlanetSpeed);
+        _Ring.SetMaterialProperty(ShaderProperties.Speed, RingSpeed);
     }
 
     public void SetColors()

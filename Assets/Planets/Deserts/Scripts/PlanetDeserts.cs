@@ -50,7 +50,7 @@ public class PlanetDeserts : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate(Rotation);
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
 
         UpdateMaterial();
         _Initiated = true;
@@ -84,9 +84,9 @@ public class PlanetDeserts : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()

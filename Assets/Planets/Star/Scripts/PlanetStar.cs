@@ -56,7 +56,7 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
         SetPixels(Pixels);
         SetSize(Size);
         SetRotate(Rotation);
-        SetSpeed(Speed);
+        SetSpeed();
 
         UpdateMaterial();
         _Initiated = true;
@@ -100,11 +100,11 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Speed, speed);
-        _Flares.SetMaterialProperty(ShaderProperties.Speed, speed * 0.5f);
-        _Emission.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        _Flares.SetMaterialProperty(ShaderProperties.Speed, Speed * 0.5f);
+        _Emission.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()

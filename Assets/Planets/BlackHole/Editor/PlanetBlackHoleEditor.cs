@@ -15,7 +15,7 @@ public class PlanetBlackHoleEditor : Editor
             planet.SetPixels(planet.Pixels);
             planet.SetSize(planet.Size);
             planet.SetRotate(planet.Rotation);
-            planet.SetSpeed(planet.Speed);
+            planet.SetSpeed();
 
             planet.UpdateMaterial();
         }

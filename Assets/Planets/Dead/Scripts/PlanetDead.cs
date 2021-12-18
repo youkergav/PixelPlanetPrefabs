@@ -52,7 +52,7 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
         SetSize(Size);
         SetRotate(Rotation);
         SetLight(LightOrigin);
-        SetSpeed(Speed);
+        SetSpeed();
 
         UpdateMaterial();
         _Initiated = true;
@@ -89,7 +89,7 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
         _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
         _Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);

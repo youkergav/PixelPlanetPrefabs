@@ -14,7 +14,7 @@ public class PlanetStarEditor : Editor
             planet.SetColors();
             planet.SetSize(planet.Size);
             planet.SetRotate(planet.Rotation);
-            planet.SetSpeed(planet.Speed);
+            planet.SetSpeed();
 
             planet.UpdateMaterial();
         }

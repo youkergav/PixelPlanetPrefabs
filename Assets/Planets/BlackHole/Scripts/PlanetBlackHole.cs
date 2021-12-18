@@ -49,7 +49,7 @@ public class PlanetBlackHole : MonoBehaviour, PlanetInterface
         SetPixels(Pixels);
         SetSize(Size);
         SetRotate(Rotation);
-        SetSpeed(Speed);
+        SetSpeed();
 
         _Initiated = true;
         UpdateMaterial();
@@ -85,9 +85,9 @@ public class PlanetBlackHole : MonoBehaviour, PlanetInterface
         SetPixels(Pixels * size);
     }
 
-    public void SetSpeed(float speed)
+    public void SetSpeed()
     {
-        _Disk.SetMaterialProperty(ShaderProperties.Speed, speed);
+        _Disk.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()
