@@ -130,10 +130,11 @@ Shader "Planet/Volcanoes/Craters"
 				return coord + 0.5;
 			}
 			fixed4 frag(v2f i) : COLOR {
-				// pixelize uv
-            	
-				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
-				//uv.y = 1 - uv.y;
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
 	
 				// check distance from center & distance to light
 				float d_circle = distance(uv, float2(0.5,0.5));

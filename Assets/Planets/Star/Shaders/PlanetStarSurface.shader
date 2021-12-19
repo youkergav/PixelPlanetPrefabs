@@ -161,22 +161,24 @@ Shader "Planet/Star/Surface"
 
 
 			fixed4 frag(v2f i) : COLOR {
-				// pixelize uv
-            	
-				float2 pixelized = floor(i.uv*_Pixels)/_Pixels;				
-				//uv.y = 1 - uv.y;
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
+
 				// use dither val later to mix between colors
-				bool dith = dither(i.uv, pixelized);
+				bool dith = dither(i.uv, uv);
 				
-				pixelized = rotate(pixelized, _Rotation);
+				uv = rotate(uv, _Rotation);
 				
 				// spherify has to go after dither
-				pixelized = spherify(pixelized);
+				uv = spherify(uv);
 				
 				// use two different _Sized cells for some variation
-				float n = Cells(pixelized - float2(_Timestamp * _Speed * 2.0, 0), 10);
-				n *= Cells(pixelized - float2(_Timestamp * _Speed * 2.0, 0), 20);
-				//n *= Cells(pixelized - vec2(_Timestamp * _Speed * 2.0, 0), 30);
+				float n = Cells(uv - float2(_Timestamp * _Speed * 2.0, 0), 10);
+				n *= Cells(uv - float2(_Timestamp * _Speed * 2.0, 0), 20);
+				//n *= Cells(uv - vec2(_Timestamp * _Speed * 2.0, 0), 30);
 				
 				// adjust cell value to get better looking stuff
 				n*= 2.;
@@ -190,7 +192,7 @@ Shader "Planet/Star/Surface"
 				float3 c = tex2D(_GradientTex, float2(interpolate, 0.0)).rgb;
 				
 				// cut out a circle
-				float a = step(distance(pixelized, float2(0.5,0.5)), .5);
+				float a = step(distance(uv, float2(0.5,0.5)), .5);
 				
 				return fixed4(c, a);
 				}

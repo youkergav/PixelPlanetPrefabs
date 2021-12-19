@@ -21,7 +21,7 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
 
     [Header("Misc")]
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
-    [Range(8f, 256)] public int Pixels = 128;
+    [Range(0f, 256)] public int Pixels = 128;
     [Range(0f, 1f)] public float CloudCover1 = 0.35f;
     [Range(0f, 1f)] public float CloudCover2 = 0.5f;
 

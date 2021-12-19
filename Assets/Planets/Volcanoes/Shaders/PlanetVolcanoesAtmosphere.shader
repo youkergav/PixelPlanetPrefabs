@@ -88,7 +88,12 @@ Shader "Planet/Volcanoes/Atmosphere"
 			fixed4 frag(v2f i) : COLOR {
 				const float PI = 3.141592;
 
-				float2 uv = pixelize(i.uv);
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = pixelize(i.uv);
+				}
+
 				float alpha = distance(uv, float2(.5, .5));
 
 				// Cut out a circle.

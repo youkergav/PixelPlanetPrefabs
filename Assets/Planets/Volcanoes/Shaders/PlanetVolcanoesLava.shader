@@ -149,10 +149,11 @@ Shader "Planet/Volcanoes/Lava"
 			}
 
 			fixed4 frag(v2f i) : COLOR {
-				// pixelize uv
-            	
-				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
-				//uv.y = 1 - uv.y;
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
 
 				float d_light = distance(uv , _LightOrigin);
 				

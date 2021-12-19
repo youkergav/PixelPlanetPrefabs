@@ -158,18 +158,20 @@ Shader "Planet/Star/Emission"
 				return sphere * 0.5+0.5;
 			}
 			fixed4 frag(v2f i) : COLOR {
-				// pixelize uv
-            	
-				float2 pixelized = floor(i.uv*_Pixels)/_Pixels;				
-				//uv.y = 1 - uv.y;
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
+
 				// use dither val later to mix between colors
-				bool dith = dither(i.uv, pixelized);
+				bool dith = dither(i.uv, uv);
 				
-				float2 uv = rotate(pixelized, _Rotation);
+				uv = rotate(uv, _Rotation);
 
 				// angle from centered uv's
 				float angle = atan2(uv.x - 0.5, uv.y - 0.5);
-				float d = distance(pixelized, float2(0.5,0.5));
+				float d = distance(uv, float2(0.5,0.5));
 				
 				
 				float c = 0.0;

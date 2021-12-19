@@ -175,10 +175,11 @@ Shader "Planet/GasGiantRinged/Surface"
 			}
 
 			fixed4 frag(v2f i) : COLOR {
-				// pixelize uv
-            	
-				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
-				//uv.y = 1 - uv.y;				
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}				
 			
 				float light_d = distance(uv, _LightOrigin) ;
 	

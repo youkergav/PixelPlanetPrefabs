@@ -21,7 +21,7 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
     [Header("Misc")]
     public bool RingEnabled = true;
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
-    [Range(8f, 256)] public int Pixels = 128;
+    [Range(0f, 256)] public int Pixels = 128;
 
     public bool Initiated
     {

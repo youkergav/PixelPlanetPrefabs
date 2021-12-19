@@ -63,7 +63,12 @@ Shader "Planet/BlackHole/Hole"
             }
 
 			fixed4 frag(v2f i) : COLOR {
-				float2 uv = floor(i.uv * _Pixels) / _Pixels; // Pixelize the UV.
+				float2 uv = i.uv;
+                
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
+
 				float centerDistance = distance(uv, float2(0.5,0.5)); // Cut out a circle
 
                 // Create the outline color.

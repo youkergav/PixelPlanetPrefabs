@@ -17,7 +17,7 @@ public class PlanetBlackHole : MonoBehaviour, PlanetInterface
     [Range(1f, 10f)] public float DiskSeed = 1f;
 
     [Header("Misc")]
-    [Range(8f, 256)] public int Pixels = 128;
+    [Range(0, 256)] public int Pixels = 128;
 
     public bool Initiated
     {

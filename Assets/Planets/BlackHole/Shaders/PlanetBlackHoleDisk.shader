@@ -154,8 +154,12 @@ Shader "Planet/BlackHole/Disk"
 			}
 
 			fixed4 frag(v2f i) : COLOR {
+				float2 uv = i.uv;
+
 				// pixelize and rotate
-				float2 uv = floor(i.uv*_Pixels)/_Pixels;				
+				if(_Pixels > 0 ){
+					uv = floor(i.uv*_Pixels)/_Pixels;				
+				}
 				uv = rotate(uv, _Rotation);
 
 				bool dith = dither(uv,uv); // we use this value later to dither between colors

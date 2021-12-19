@@ -19,7 +19,7 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
     [Range(1f, 10f)] public float EmmisionSeed = 1f;
 
     [Header("Misc")]
-    [Range(8f, 256)] public int Pixels = 128;
+    [Range(0f, 256)] public int Pixels = 128;
 
     public bool Initiated
     {

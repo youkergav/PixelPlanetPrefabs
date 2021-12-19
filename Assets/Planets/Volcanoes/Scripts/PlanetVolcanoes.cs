@@ -23,7 +23,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
     [Header("Misc")]
     public bool CratersEnabled = true;
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
-    [Range(8f, 256)] public int Pixels = 128;
+    [Range(0f, 256)] public int Pixels = 128;
     [Range(0f, 1f)] public float LavaFlow = 0.4f;
 
     public bool Initiated
