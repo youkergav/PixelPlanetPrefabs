@@ -281,7 +281,80 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!21 &456283186
+--- !u!1001 &673080550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 450546459366563050, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1817380928}
+    - target: {fileID: 450546459925469671, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1032366092}
+    - target: {fileID: 450546459974097149, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_Name
+      value: PlanetContinents
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0171294
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.008481082
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 450546460664081475, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 954455058}
+    - target: {fileID: 4028249320924395144, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 1918542388}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
+--- !u!21 &954455058
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -428,7 +501,7 @@ Material:
     - _Shadow_Outline_color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
---- !u!21 &483597685
+--- !u!21 &1032366092
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -583,133 +656,7 @@ Material:
     - shadow_base_color: {r: 0.09611963, g: 0.4528302, b: 0.11310587, a: 0}
     - shadow_outline_color: {r: 0.09636932, g: 0.2264151, b: 0.05873977, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &996131852
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlanetContinentsAtmosphere
-  m_Shader: {fileID: 4800000, guid: 787efb8c9cce13340aeb6ea095993980, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _EnableExternalAlpha: 0
-    - _Falloff: 3.81
-    - _InnerRadius: 0.422
-    - _LightZone: 2.77
-    - _OuterRadius: 0.5
-    - _Pixels: 128
-    - _Power: 2.36
-    - _Radius: 1
-    - _RimWidth: 3
-    m_Colors:
-    - _Color: {r: 0.05490196, g: 0.34901962, b: 0.6039216, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _OuterRimColor: {r: 0.05724907, g: 0, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!1001 &1095406396
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 450546459366563050, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 1498246592}
-    - target: {fileID: 450546459925469671, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 483597685}
-    - target: {fileID: 450546459974097149, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_Name
-      value: PlanetContinents
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 450546460664081475, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 456283186}
-    - target: {fileID: 4028249320924395144, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 996131852}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
---- !u!21 &1498246592
+--- !u!21 &1817380928
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -864,4 +811,57 @@ Material:
     - outline_color: {r: 0.17988235, g: 0.7075472, b: 0.15018693, a: 0}
     - shadow_base_color: {r: 0.09611963, g: 0.4528302, b: 0.11310587, a: 0}
     - shadow_outline_color: {r: 0.09636932, g: 0.2264151, b: 0.05873977, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &1918542388
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlanetContinentsAtmosphere
+  m_Shader: {fileID: 4800000, guid: 787efb8c9cce13340aeb6ea095993980, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _EnableExternalAlpha: 0
+    - _Falloff: 3.81
+    - _InnerRadius: 0.422
+    - _LightZone: 2.77
+    - _OuterRadius: 0.5
+    - _Pixels: 128
+    - _Power: 2.36
+    - _Radius: 1
+    - _RimWidth: 3
+    m_Colors:
+    - _Color: {r: 0.05490196, g: 0.34901962, b: 0.6039216, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
+    - _OuterRimColor: {r: 0.05724907, g: 0, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

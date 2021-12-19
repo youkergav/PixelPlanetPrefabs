@@ -213,21 +213,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Size: 1
   Rotation: 0
-  Speed: 0.5
+  PlanetSpeed: 0.5
+  CloudSpeed: 0.5
   LandColor:
     serializedVersion: 2
     key0: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
     key1: {r: 0.23137255, g: 0.49019608, b: 0.30980393, a: 1}
-    key2: {r: 0.20796935, g: 0.41608596, b: 0.317605, a: 0}
-    key3: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 0}
+    key2: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 0}
+    key3: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 0}
     key4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
     ctime1: 21627
-    ctime2: 32382
-    ctime3: 43253
+    ctime2: 43253
+    ctime3: 65535
     ctime4: 65535
     ctime5: 0
     ctime6: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 5
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   WaterColor:
     serializedVersion: 2
