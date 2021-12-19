@@ -14,9 +14,9 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
     public Gradient EmmisionColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float SurfaceSeed = 1f;
-    [Range(1f, 10f)] public float FlaresSeed = 1f;
-    [Range(1f, 10f)] public float EmmisionSeed = 1f;
+    [Range(1, 100)] public int SurfaceSeed = 1;
+    [Range(1, 100)] public int FlaresSeed = 1;
+    [Range(1, 100)] public int EmmisionSeed = 1;
 
     [Header("Misc")]
     [Range(0f, 256)] public int Pixels = 128;

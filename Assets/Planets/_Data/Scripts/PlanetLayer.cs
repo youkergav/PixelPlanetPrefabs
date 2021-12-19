@@ -18,6 +18,18 @@ public class PlanetLayer
         _Renderer.enabled = enabled;
     }
 
+    public void SetMaterialProperty(string key, int value)
+    {
+        if (isPrefab())
+        {
+            _Renderer.sharedMaterial.SetInt(key, value);
+        }
+        else
+        {
+            _Material.SetInt(key, value);
+        }
+    }
+
     public void SetMaterialProperty(string key, float value)
     {
         if (isPrefab())

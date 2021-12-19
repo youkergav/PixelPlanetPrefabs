@@ -14,8 +14,8 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
     public Gradient CraterColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float SurfaceSeed = 1f;
-    [Range(1f, 10f)] public float CraterSeed = 1f;
+    [Range(1, 100)] public int SurfaceSeed = 1;
+    [Range(1, 100)] public int CraterSeed = 1;
 
     [Header("Misc")]
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);

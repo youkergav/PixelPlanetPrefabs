@@ -16,9 +16,9 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
     public Gradient AtmosphereColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float LandSeed = 1f;
-    [Range(1f, 10f)] public float CratersSeed = 1f;
-    [Range(1f, 10f)] public float LavaSeed = 1f;
+    [Range(1, 100)] public int LandSeed = 1;
+    [Range(1, 100)] public int CratersSeed = 1;
+    [Range(1, 100)] public int LavaSeed = 1;
 
     [Header("Misc")]
     public bool CratersEnabled = true;

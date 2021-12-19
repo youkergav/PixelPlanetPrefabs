@@ -15,9 +15,9 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
     public Gradient Clouds2Color;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float SurfaceSeed = 1f;
-    [Range(1f, 10f)] public float Clouds1Seed = 1f;
-    [Range(1f, 10f)] public float Clouds2Seed = 1f;
+    [Range(1, 100)] public int SurfaceSeed = 1;
+    [Range(1, 100)] public int Clouds1Seed = 1;
+    [Range(1, 100)] public int Clouds2Seed = 1;
 
     [Header("Misc")]
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);

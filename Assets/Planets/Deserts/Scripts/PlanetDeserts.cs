@@ -13,7 +13,7 @@ public class PlanetDeserts : MonoBehaviour, PlanetInterface
     public Gradient AtmosphereColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float SurfaceSeed = 1f;
+    [Range(1, 100)] public int SurfaceSeed = 100;
 
     [Header("Misc")]
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);

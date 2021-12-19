@@ -17,9 +17,9 @@ public class PlanetIcelands : MonoBehaviour, PlanetInterface
     public Gradient AtmosphereColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float LandSeed = 1f;
-    [Range(1f, 10f)] public float WaterSeed = 1f;
-    [Range(1f, 10f)] public float CloudsSeed = 1f;
+    [Range(1, 100)] public int LandSeed = 100;
+    [Range(1, 100)] public int WaterSeed = 100;
+    [Range(1, 100)] public int CloudsSeed = 100;
 
     [Header("Misc")]
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);

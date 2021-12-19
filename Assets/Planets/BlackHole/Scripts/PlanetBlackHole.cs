@@ -13,8 +13,7 @@ public class PlanetBlackHole : MonoBehaviour, PlanetInterface
     public Gradient DiskColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float HoleSeed = 1f;
-    [Range(1f, 10f)] public float DiskSeed = 1f;
+    [Range(1, 100)] public int DiskSeed = 1;
 
     [Header("Misc")]
     [Range(0, 256)] public int Pixels = 128;
@@ -57,7 +56,6 @@ public class PlanetBlackHole : MonoBehaviour, PlanetInterface
 
     public void SetSeed()
     {
-        _Hole.SetMaterialProperty(ShaderProperties.Seed, HoleSeed);
         _Disk.SetMaterialProperty(ShaderProperties.Seed, DiskSeed);
     }
 

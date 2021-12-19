@@ -13,7 +13,7 @@ Shader "Planet/BlackHole/Disk"
 
 	    _Size("Size",float) = 9.0
 	    _Octaves("Octaves", range(0,20)) = 5
-	    _Seed("Seed",range(1, 10)) = 5.938
+	    _Seed("Seed",range(1, 100)) = 1
 	    _Timestamp("Timestamp",float) = 0.0
     }
 

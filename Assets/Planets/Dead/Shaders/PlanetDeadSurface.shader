@@ -19,7 +19,7 @@ Shader "Planet/Dead/Surface"
     	
 	    _Size("Size",float) = 50.0
 	    _Octaves("Octaves", range(0,20)) = 1.5
-	    _Seed("Seed",range(1, 10)) = 1
+	    _Seed("Seed",range(1, 100)) = 1
 	    _Timestamp("Timestamp",float) = 0.0
     	
     }

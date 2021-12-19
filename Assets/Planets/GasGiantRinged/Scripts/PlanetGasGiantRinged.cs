@@ -15,8 +15,8 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
     public Gradient RingColor;
 
     [Header("Seeds")]
-    [Range(1f, 10f)] public float PlanetSeed = 1f;
-    [Range(1f, 10f)] public float RingSeed = 1f;
+    [Range(1, 100)] public int PlanetSeed = 100;
+    [Range(1, 100)] public int RingSeed = 100;
 
     [Header("Misc")]
     public bool RingEnabled = true;

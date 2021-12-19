@@ -19,7 +19,7 @@ Shader "Planet/GasGiantRinged/Surface"
 
 	    _Size("Size",float) = 50.0
 	    _OCTAVES("Octaves", range(0,20)) = 0
-	    _Seed("Seed", range(1, 10)) = 7.46
+	    _Seed("Seed", range(1, 100)) = 1
 	    _Timestamp("Timestamp", float) = 0.0
     }
     SubShader
