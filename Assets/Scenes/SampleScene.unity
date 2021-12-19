@@ -123,6 +123,153 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &221662941
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlanetContinentsClouds
+  m_Shader: {fileID: 4800000, guid: 7c5024b77f8136348b1b9cc33b7741f2, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_5a0a7bc040184b8fa64d1800950db75c_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _CloudCover: 0.5
+    - _CloudCurve: 1.199
+    - _Cloud_cover: 0.5
+    - _Cloud_curve: 1.3
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _LightBorder1: 0.52
+    - _LightBorder2: 0.62
+    - _Light_border_1: 0.52
+    - _Light_border_2: 0.62
+    - _Metallic: 0
+    - _OCTAVES: 2
+    - _OcclusionStrength: 1
+    - _Octaves: 5
+    - _Orientation: 0
+    - _Parallax: 0.005
+    - _Pixels: 128
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Rotation: 0
+    - _Seed: 1
+    - _Size: 6
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 0.5
+    - _SrcBlend: 1
+    - _Stretch: 2
+    - _Surface: 0
+    - _Time: 0
+    - _Time_speed: 0.5
+    - _Timer: 0
+    - _Timestamp: 9.22212
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - time: 1.3879261
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
+    - _Color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
+    - _Color1: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
+    - _Color2: {r: 0.40784243, g: 0.43529344, b: 0.59999937, a: 1}
+    - _Color3: {r: 0.6392206, g: 0.65490663, b: 0.7607874, a: 1}
+    - _Color4: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
+    - _Light_origin: {r: 0.3, g: 0.7, b: 0, a: 0}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Outline_color: {r: 0.6392206, g: 0.65490663, b: 0.7607874, a: 1}
+    - _ShadowBaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Shadow_Base_color: {r: 0.40784243, g: 0.43529344, b: 0.59999937, a: 1}
+    - _Shadow_Outline_color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &374383815
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +428,60 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!1001 &673080550
+--- !u!21 &863545089
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlanetContinentsAtmosphere
+  m_Shader: {fileID: 4800000, guid: 787efb8c9cce13340aeb6ea095993980, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _EnableExternalAlpha: 0
+    - _Falloff: 3.81
+    - _InnerRadius: 0.422
+    - _LightZone: 2.77
+    - _OuterRadius: 0.5
+    - _Pixels: 128
+    - _Power: 2.36
+    - _Radius: 1
+    - _RimWidth: 3
+    m_Colors:
+    - _Color: {r: 0.05490196, g: 0.34901962, b: 0.6039216, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
+    - _OuterRimColor: {r: 0.05724907, g: 0, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+--- !u!1001 &923848200
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -291,11 +491,11 @@ PrefabInstance:
     - target: {fileID: 450546459366563050, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1817380928}
+      objectReference: {fileID: 970789996}
     - target: {fileID: 450546459925469671, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1032366092}
+      objectReference: {fileID: 1687074566}
     - target: {fileID: 450546459974097149, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_Name
       value: PlanetContinents
@@ -306,11 +506,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0171294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.008481082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 450546459974097150, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_LocalPosition.z
@@ -347,316 +547,14 @@ PrefabInstance:
     - target: {fileID: 450546460664081475, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 954455058}
+      objectReference: {fileID: 221662941}
     - target: {fileID: 4028249320924395144, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1918542388}
+      objectReference: {fileID: 863545089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70357aa5543360e40a1a5b83834fbf87, type: 3}
---- !u!21 &954455058
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlanetContinentsClouds
-  m_Shader: {fileID: 4800000, guid: 7c5024b77f8136348b1b9cc33b7741f2, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_5a0a7bc040184b8fa64d1800950db75c_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BumpScale: 1
-    - _ClearCoatMask: 0
-    - _ClearCoatSmoothness: 0
-    - _CloudCover: 0.5
-    - _CloudCurve: 1.199
-    - _Cloud_cover: 0.5
-    - _Cloud_curve: 1.3
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DetailAlbedoMapScale: 1
-    - _DetailNormalMapScale: 1
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _LightBorder1: 0.52
-    - _LightBorder2: 0.62
-    - _Light_border_1: 0.52
-    - _Light_border_2: 0.62
-    - _Metallic: 0
-    - _OCTAVES: 2
-    - _OcclusionStrength: 1
-    - _Octaves: 5
-    - _Orientation: 0
-    - _Parallax: 0.005
-    - _Pixels: 128
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Rotation: 0
-    - _Seed: 1
-    - _Size: 6
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _Speed: 0.5
-    - _SrcBlend: 1
-    - _Stretch: 2
-    - _Surface: 0
-    - _Time: 0
-    - _Time_speed: 0.5
-    - _Timer: 0
-    - _Timestamp: 9.22212
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    - time: 1.3879261
-    m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Base_color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
-    - _Color: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
-    - _Color1: {r: 0.8745098, g: 0.8784314, b: 0.9098039, a: 1}
-    - _Color2: {r: 0.40784243, g: 0.43529344, b: 0.59999937, a: 1}
-    - _Color3: {r: 0.6392206, g: 0.65490663, b: 0.7607874, a: 1}
-    - _Color4: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _Light_origin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Outline_color: {r: 0.6392206, g: 0.65490663, b: 0.7607874, a: 1}
-    - _ShadowBaseColor: {r: 0, g: 0, b: 0, a: 0}
-    - _ShadowOutlineColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Shadow_Base_color: {r: 0.40784243, g: 0.43529344, b: 0.59999937, a: 1}
-    - _Shadow_Outline_color: {r: 0.2509804, g: 0.28627452, b: 0.4509804, a: 1}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-  m_BuildTextureStacks: []
---- !u!21 &1032366092
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: PlanetContinentsLand
-  m_Shader: {fileID: 4800000, guid: dcfaae84ff231304f812bd8870cd7258, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _EmissionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OcclusionMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - OCTAVES: 6
-    - _AlphaClip: 0
-    - _Blend: 0
-    - _BumpScale: 1
-    - _ClearCoatMask: 0
-    - _ClearCoatSmoothness: 0
-    - _Cull: 2
-    - _Cutoff: 0.5
-    - _DetailAlbedoMapScale: 1
-    - _DetailNormalMapScale: 1
-    - _Dither_Size: 2
-    - _Dither__Size: 2
-    - _Dithering: 2
-    - _DstBlend: 0
-    - _EnvironmentReflections: 1
-    - _FlowRate: 0.55
-    - _GlossMapScale: 0
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _Land_cutoff: 0.538
-    - _LightBorder1: 0.52
-    - _LightBorder2: 0.62
-    - _Light_border_1: 0.32
-    - _Light_border_2: 0.534
-    - _Metallic: 0
-    - _OCTAVES: 6
-    - _OcclusionStrength: 1
-    - _Octaves: 5
-    - _Parallax: 0.005
-    - _Pixels: 128
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Rotation: 0
-    - _Seed: 1
-    - _Size: 4.292
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
-    - _SpecularHighlights: 1
-    - _Speed: 0.5
-    - _SrcBlend: 1
-    - _Surface: 0
-    - _Time_speed: 0.5
-    - _Timestamp: 18.44424
-    - _WorkflowMode: 1
-    - _ZWrite: 1
-    - cloud_cover: 0.504
-    - cloud_curve: 1.565
-    - dither_size: 2
-    - land_cutoff: 0.633
-    - light_border_1: 0.32
-    - light_border_2: 0.534
-    - pixels: 100
-    - rotation: 0.2
-    - seed: 7.947
-    - size: 4.2
-    - stretch: 2.001
-    - time: 2.7758522
-    - time_speed: 1.1990646
-    m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
-    - _Color1: {r: 0.78431374, g: 0.83137256, b: 0.3647059, a: 1}
-    - _Color2: {r: 0.2313758, g: 0.4901998, b: 0.30980262, a: 1}
-    - _Color3: {r: 0.18431361, g: 0.34117588, b: 0.32548988, a: 1}
-    - _Color4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _Light_origin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - base_color: {r: 0.8451899, g: 0.8679245, b: 0.47080812, a: 1}
-    - col1: {r: 0.78431374, g: 0.83137256, b: 0.3647059, a: 1}
-    - col2: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
-    - col3: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 1}
-    - col4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
-    - light_origin: {r: 0.7441406, g: 0.6782407, b: 0, a: 0}
-    - outline_color: {r: 0.17988235, g: 0.7075472, b: 0.15018693, a: 0}
-    - shadow_base_color: {r: 0.09611963, g: 0.4528302, b: 0.11310587, a: 0}
-    - shadow_outline_color: {r: 0.09636932, g: 0.2264151, b: 0.05873977, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1817380928
+--- !u!21 &970789996
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -812,15 +710,15 @@ Material:
     - shadow_base_color: {r: 0.09611963, g: 0.4528302, b: 0.11310587, a: 0}
     - shadow_outline_color: {r: 0.09636932, g: 0.2264151, b: 0.05873977, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &1918542388
+--- !u!21 &1687074566
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlanetContinentsAtmosphere
-  m_Shader: {fileID: 4800000, guid: 787efb8c9cce13340aeb6ea095993980, type: 3}
+  m_Name: PlanetContinentsLand
+  m_Shader: {fileID: 4800000, guid: dcfaae84ff231304f812bd8870cd7258, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -831,7 +729,27 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _AlphaTex:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -839,29 +757,111 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MaskTex:
+    - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _NormalMap:
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EnableExternalAlpha: 0
-    - _Falloff: 3.81
-    - _InnerRadius: 0.422
-    - _LightZone: 2.77
-    - _OuterRadius: 0.5
+    - OCTAVES: 6
+    - _AlphaClip: 0
+    - _Blend: 0
+    - _BumpScale: 1
+    - _ClearCoatMask: 0
+    - _ClearCoatSmoothness: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailAlbedoMapScale: 1
+    - _DetailNormalMapScale: 1
+    - _Dither_Size: 2
+    - _Dither__Size: 2
+    - _Dithering: 2
+    - _DstBlend: 0
+    - _EnvironmentReflections: 1
+    - _FlowRate: 0.55
+    - _GlossMapScale: 0
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _Land_cutoff: 0.538
+    - _LightBorder1: 0.52
+    - _LightBorder2: 0.62
+    - _Light_border_1: 0.32
+    - _Light_border_2: 0.534
+    - _Metallic: 0
+    - _OCTAVES: 6
+    - _OcclusionStrength: 1
+    - _Octaves: 5
+    - _Parallax: 0.005
     - _Pixels: 128
-    - _Power: 2.36
-    - _Radius: 1
-    - _RimWidth: 3
+    - _QueueOffset: 0
+    - _ReceiveShadows: 1
+    - _Rotation: 0
+    - _Seed: 1
+    - _Size: 4.292
+    - _Smoothness: 0.5
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 0.5
+    - _SrcBlend: 1
+    - _Surface: 0
+    - _Time_speed: 0.5
+    - _Timestamp: 18.44424
+    - _WorkflowMode: 1
+    - _ZWrite: 1
+    - cloud_cover: 0.504
+    - cloud_curve: 1.565
+    - dither_size: 2
+    - land_cutoff: 0.633
+    - light_border_1: 0.32
+    - light_border_2: 0.534
+    - pixels: 100
+    - rotation: 0.2
+    - seed: 7.947
+    - size: 4.2
+    - stretch: 2.001
+    - time: 2.7758522
+    - time_speed: 1.1990646
     m_Colors:
-    - _Color: {r: 0.05490196, g: 0.34901962, b: 0.6039216, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
+    - _Color1: {r: 0.78431374, g: 0.83137256, b: 0.3647059, a: 1}
+    - _Color2: {r: 0.2313758, g: 0.4901998, b: 0.30980262, a: 1}
+    - _Color3: {r: 0.18431361, g: 0.34117588, b: 0.32548988, a: 1}
+    - _Color4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LightOrigin: {r: 0.3, g: 0.7, b: 0, a: 0}
-    - _OuterRimColor: {r: 0.05724907, g: 0, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Light_origin: {r: 0.3, g: 0.7, b: 0, a: 0}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - base_color: {r: 0.8451899, g: 0.8679245, b: 0.47080812, a: 1}
+    - col1: {r: 0.78431374, g: 0.83137256, b: 0.3647059, a: 1}
+    - col2: {r: 0.3882353, g: 0.67058825, b: 0.24705882, a: 1}
+    - col3: {r: 0.18431373, g: 0.34117648, b: 0.3254902, a: 1}
+    - col4: {r: 0.15686275, g: 0.20784314, b: 0.2509804, a: 1}
+    - light_origin: {r: 0.7441406, g: 0.6782407, b: 0, a: 0}
+    - outline_color: {r: 0.17988235, g: 0.7075472, b: 0.15018693, a: 0}
+    - shadow_base_color: {r: 0.09611963, g: 0.4528302, b: 0.11310587, a: 0}
+    - shadow_outline_color: {r: 0.09636932, g: 0.2264151, b: 0.05873977, a: 0}
   m_BuildTextureStacks: []

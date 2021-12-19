@@ -386,6 +386,6 @@ MonoBehaviour:
   Clouds1Seed: 1
   Clouds2Seed: 1
   LightOrigin: {x: 0.3, y: 0.7}
-  Pixels: 256
+  Pixels: 128
   CloudCover1: 0.7
   CloudCover2: 0.5
