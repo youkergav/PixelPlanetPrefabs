@@ -195,6 +195,8 @@ Shader "Planet/Continents/Clouds" {
 
                 float c = cloud_alpha(uv * float2(1.0, _Stretch));
 
+				_CloudCover = 1 - _CloudCover;
+
                 // assign some colors based on cloud depth & distance from light
 				float3 col = _Color.rgb;
 				if (c < _CloudCover + 0.03) {
