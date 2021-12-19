@@ -271,35 +271,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  EmmisionColor:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 0.89411765, a: 1}
-    key1: {r: 1, g: 1, b: 0.89411765, a: 1}
-    key2: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    key3: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    key4: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    key5: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    key6: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    key7: {r: 0.70980394, g: 0.35686275, b: 0.44313726, a: 0.47058824}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
+  EmmisionColor: {r: 1, g: 1, b: 0.89411765, a: 1}
   SurfaceSeed: 1
   FlaresSeed: 1
   EmmisionSeed: 1

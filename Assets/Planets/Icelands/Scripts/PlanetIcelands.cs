@@ -14,7 +14,7 @@ public class PlanetIcelands : MonoBehaviour, PlanetInterface
     public Gradient LandColor;
     public Gradient WaterColor;
     public Gradient CloudsColor;
-    public Gradient AtmosphereColor;
+    public Color AtmosphereColor;
 
     [Header("Seeds")]
     [Range(1, 100)] public int LandSeed = 100;
@@ -161,7 +161,7 @@ public class PlanetIcelands : MonoBehaviour, PlanetInterface
         }
 
         // Set atmosphere colors.
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor.Evaluate(1));
+        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
     }
 
     public void UpdateMaterial()

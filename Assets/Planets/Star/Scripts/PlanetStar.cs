@@ -11,7 +11,7 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
     [Header("Colors")]
     public Gradient SurfaceColor;
     public Gradient FlaresColor;
-    public Gradient EmmisionColor;
+    public Color EmmisionColor;
 
     [Header("Seeds")]
     [Range(1, 100)] public int SurfaceSeed = 1;
@@ -111,7 +111,7 @@ public class PlanetStar : MonoBehaviour, PlanetInterface
     {
         _Surface.SetMaterialProperty(ShaderProperties.GradientTex, PlanetUtil.GenTexture(SurfaceColor));
         _Flares.SetMaterialProperty(ShaderProperties.GradientTex, PlanetUtil.GenTexture(FlaresColor));
-        _Emission.SetMaterialProperty(ShaderProperties.Color, EmmisionColor.Evaluate(0f));
+        _Emission.SetMaterialProperty(ShaderProperties.Color, EmmisionColor);
     }
 
     public void UpdateMaterial()

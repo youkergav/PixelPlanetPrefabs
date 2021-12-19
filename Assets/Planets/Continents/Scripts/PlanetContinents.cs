@@ -14,7 +14,7 @@ public class PlanetContinents : MonoBehaviour, PlanetInterface
     public Gradient LandColor;
     public Gradient WaterColor;
     public Gradient CloudsColor;
-    public Gradient AtmosphereColor;
+    public Color AtmosphereColor;
 
     [Header("Seeds")]
     [Range(1, 100)] public int LandSeed = 1;
@@ -162,7 +162,7 @@ public class PlanetContinents : MonoBehaviour, PlanetInterface
         }
 
         // Set atmostphere color.
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor.Evaluate(1));
+        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
     }
 
     public void UpdateMaterial()

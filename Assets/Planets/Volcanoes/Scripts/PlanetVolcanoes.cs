@@ -13,7 +13,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
     public Gradient LandColor;
     public Gradient CratersColor;
     public Gradient LavaColor;
-    public Gradient AtmosphereColor;
+    public Color AtmosphereColor;
 
     [Header("Seeds")]
     [Range(1, 100)] public int LandSeed = 1;
@@ -163,7 +163,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
         }
 
         // Set atmosphere color.
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor.Evaluate(1));
+        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
     }
 
     public void EnableCraters(bool enabled)

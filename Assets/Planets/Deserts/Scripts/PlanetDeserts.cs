@@ -10,7 +10,7 @@ public class PlanetDeserts : MonoBehaviour, PlanetInterface
 
     [Header("Colors")]
     public Gradient SurfaceColor;
-    public Gradient AtmosphereColor;
+    public Color AtmosphereColor;
 
     [Header("Seeds")]
     [Range(1, 100)] public int SurfaceSeed = 100;
@@ -92,7 +92,7 @@ public class PlanetDeserts : MonoBehaviour, PlanetInterface
     public void SetColors()
     {
         _Surface.SetMaterialProperty(ShaderProperties.GradientTex, PlanetUtil.GenTexture(SurfaceColor));
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor.Evaluate(1));
+        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
     }
 
     public void UpdateMaterial()
