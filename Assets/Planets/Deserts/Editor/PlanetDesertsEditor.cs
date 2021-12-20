@@ -8,8 +8,18 @@ public class PlanetDesertsEditor : Editor
         base.OnInspectorGUI();
         PlanetDeserts planet = (PlanetDeserts)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Surface,
+                planet.Atmosphere
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetSize(planet.Size);

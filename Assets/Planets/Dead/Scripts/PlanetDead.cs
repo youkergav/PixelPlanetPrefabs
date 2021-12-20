@@ -21,30 +21,23 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
     [Range(0f, 256)] public int Pixels = 128;
 
-    public bool Initiated
+    [HideInInspector] public PlanetLayer Surface;
+    [HideInInspector] public PlanetLayer Craters;
+
+    public bool Initialized
     {
         get
         {
-            return _Initiated;
+            return _Initialized;
         }
     }
 
-    private PlanetLayer _Surface;
-    private PlanetLayer _Craters;
-
-    private bool _Initiated = false;
+    private bool _Initialized = false;
     private float _Timestamp = 0f;
 
     private void Awake()
     {
-        SpriteRenderer surfaceRenderer = transform.Find("Surface").GetComponent<SpriteRenderer>();
-        SpriteRenderer cratersRenderer = transform.Find("Craters").GetComponent<SpriteRenderer>();
-
-        Material surfaceMaterial = new Material(surfaceRenderer.sharedMaterial);
-        Material cratersMaterial = new Material(cratersRenderer.sharedMaterial);
-
-        _Surface = new PlanetLayer(gameObject, surfaceRenderer, surfaceMaterial);
-        _Craters = new PlanetLayer(gameObject, cratersRenderer, cratersMaterial);
+        _Initialized = Initialize();
 
         SetSeed();
         SetColors();
@@ -55,31 +48,44 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
         SetSpeed();
 
         UpdateMaterial();
-        _Initiated = true;
+    }
+
+    public bool Initialize()
+    {
+        SpriteRenderer surfaceRenderer = transform.Find("Surface").GetComponent<SpriteRenderer>();
+        SpriteRenderer cratersRenderer = transform.Find("Craters").GetComponent<SpriteRenderer>();
+
+        Material surfaceMaterial = new Material(surfaceRenderer.sharedMaterial);
+        Material cratersMaterial = new Material(cratersRenderer.sharedMaterial);
+
+        Surface = new PlanetLayer(gameObject, surfaceRenderer, surfaceMaterial);
+        Craters = new PlanetLayer(gameObject, cratersRenderer, cratersMaterial);
+
+        return true;
     }
 
     public void SetSeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Seed, SurfaceSeed);
-        _Craters.SetMaterialProperty(ShaderProperties.Seed, CraterSeed);
+        Surface.SetMaterialProperty(ShaderProperties.Seed, SurfaceSeed);
+        Craters.SetMaterialProperty(ShaderProperties.Seed, CraterSeed);
     }
 
     public void SetPixels(float ppu)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Craters.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Surface.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Craters.SetMaterialProperty(ShaderProperties.Pixels, ppu);
     }
 
     public void SetLight(Vector2 position)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Craters.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Surface.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Craters.SetMaterialProperty(ShaderProperties.LightOrigin, position);
     }
 
     public void SetRotate(float rotation)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Craters.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Surface.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Craters.SetMaterialProperty(ShaderProperties.Rotation, rotation);
     }
 
     public void SetSize(float size)
@@ -91,8 +97,8 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
 
     public void SetSpeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
-        _Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()
@@ -108,7 +114,7 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Surface.SetMaterialProperty(element.Key, SurfaceColor.Evaluate(element.Value));
+            Surface.SetMaterialProperty(element.Key, SurfaceColor.Evaluate(element.Value));
         }
 
         // Set crater colors.
@@ -119,14 +125,14 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Craters.SetMaterialProperty(element.Key, CraterColor.Evaluate(element.Value));
+            Craters.SetMaterialProperty(element.Key, CraterColor.Evaluate(element.Value));
         }
     }
 
     public void UpdateMaterial()
     {
-        _Surface.UpdateMaterial();
-        _Craters.UpdateMaterial();
+        Surface.UpdateMaterial();
+        Craters.UpdateMaterial();
     }
 
     public void UpdateMaterial(SpriteRenderer renderer, Material material)
@@ -138,14 +144,14 @@ public class PlanetDead : MonoBehaviour, PlanetInterface
     {
         float time = 10f + start * 60f;
 
-        _Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     public void UpdateTime(float time)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     private void Update()

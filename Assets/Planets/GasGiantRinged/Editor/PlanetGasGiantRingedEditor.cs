@@ -8,8 +8,18 @@ public class PlanetGasGiantRingedEditor : Editor
         base.OnInspectorGUI();
         PlanetGasGiantRinged planet = (PlanetGasGiantRinged)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Planet,
+                planet.Ring
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetSize(planet.Size);

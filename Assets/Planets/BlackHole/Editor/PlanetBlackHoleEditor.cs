@@ -8,8 +8,18 @@ public class PlanetBlackHoleEditor : Editor
         base.OnInspectorGUI();
         PlanetBlackHole planet = (PlanetBlackHole)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Hole,
+                planet.Disk
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetPixels(planet.Pixels);

@@ -25,34 +25,24 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
     [Range(0f, 1f)] public float CloudCover1 = 0.35f;
     [Range(0f, 1f)] public float CloudCover2 = 0.5f;
 
-    public bool Initiated
+    [HideInInspector] public PlanetLayer Surface;
+    [HideInInspector] public PlanetLayer Clouds1;
+    [HideInInspector] public PlanetLayer Clouds2;
+
+    public bool Initialized
     {
         get
         {
-            return _Initiated;
+            return _Initialized;
         }
     }
 
-    private PlanetLayer _Surface;
-    private PlanetLayer _Clouds1;
-    private PlanetLayer _Clouds2;
-
-    private bool _Initiated = false;
+    private bool _Initialized = false;
     private float _Timestamp = 0f;
 
     private void Awake()
     {
-        SpriteRenderer surfaceRenderer = transform.Find("Surface").GetComponent<SpriteRenderer>();
-        SpriteRenderer clouds1Renderer = transform.Find("Clouds1").GetComponent<SpriteRenderer>();
-        SpriteRenderer clouds2Renderer = transform.Find("Clouds2").GetComponent<SpriteRenderer>();
-
-        Material surfaceMaterial = new Material(surfaceRenderer.sharedMaterial);
-        Material clouds1Material = new Material(clouds1Renderer.sharedMaterial);
-        Material clouds2Material = new Material(clouds2Renderer.sharedMaterial);
-
-        _Surface = new PlanetLayer(gameObject, surfaceRenderer, surfaceMaterial);
-        _Clouds1 = new PlanetLayer(gameObject, clouds1Renderer, clouds1Material);
-        _Clouds2 = new PlanetLayer(gameObject, clouds2Renderer, clouds2Material);
+        _Initialized = Initialize();
 
         SetSeed();
         SetColors();
@@ -63,43 +53,54 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
         SetSpeed();
 
         UpdateMaterial();
-        _Initiated = true;
     }
 
-    public bool Is_Initiated()
+    public bool Initialize()
     {
-        return _Initiated;
+        SpriteRenderer surfaceRenderer = transform.Find("Surface").GetComponent<SpriteRenderer>();
+        SpriteRenderer clouds1Renderer = transform.Find("Clouds1").GetComponent<SpriteRenderer>();
+        SpriteRenderer clouds2Renderer = transform.Find("Clouds2").GetComponent<SpriteRenderer>();
+
+        Material surfaceMaterial = new Material(surfaceRenderer.sharedMaterial);
+        Material clouds1Material = new Material(clouds1Renderer.sharedMaterial);
+        Material clouds2Material = new Material(clouds2Renderer.sharedMaterial);
+
+        Surface = new PlanetLayer(gameObject, surfaceRenderer, surfaceMaterial);
+        Clouds1 = new PlanetLayer(gameObject, clouds1Renderer, clouds1Material);
+        Clouds2 = new PlanetLayer(gameObject, clouds2Renderer, clouds2Material);
+
+        return true;
     }
 
     public void SetSeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Seed, SurfaceSeed);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Seed, Clouds1Seed);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Seed, Clouds2Seed);
+        Surface.SetMaterialProperty(ShaderProperties.Seed, SurfaceSeed);
+        Clouds1.SetMaterialProperty(ShaderProperties.Seed, Clouds1Seed);
+        Clouds2.SetMaterialProperty(ShaderProperties.Seed, Clouds2Seed);
 
-        _Clouds1.SetMaterialProperty(ShaderProperties.CloudCover, CloudCover1);
-        _Clouds2.SetMaterialProperty(ShaderProperties.CloudCover, CloudCover2);
+        Clouds1.SetMaterialProperty(ShaderProperties.CloudCover, CloudCover1);
+        Clouds2.SetMaterialProperty(ShaderProperties.CloudCover, CloudCover2);
     }
 
     public void SetPixels(float ppu)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Surface.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Clouds1.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Clouds2.SetMaterialProperty(ShaderProperties.Pixels, ppu);
     }
 
     public void SetLight(Vector2 position)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Clouds1.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Clouds2.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Surface.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Clouds1.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Clouds2.SetMaterialProperty(ShaderProperties.LightOrigin, position);
     }
 
     public void SetRotate(float rotation)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Surface.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Clouds1.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Clouds2.SetMaterialProperty(ShaderProperties.Rotation, rotation);
     }
 
     public void SetSize(float size)
@@ -111,9 +112,9 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
 
     public void SetSpeed()
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Speed, Speed);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Surface.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Clouds1.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Clouds2.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()
@@ -129,7 +130,7 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Surface.SetMaterialProperty(element.Key, SurfaceColor.Evaluate(element.Value));
+            Surface.SetMaterialProperty(element.Key, SurfaceColor.Evaluate(element.Value));
         }
 
         // Set clouds1 colors.
@@ -142,7 +143,7 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Clouds1.SetMaterialProperty(element.Key, Clouds1Color.Evaluate(element.Value));
+            Clouds1.SetMaterialProperty(element.Key, Clouds1Color.Evaluate(element.Value));
         }
 
         // Set clouds2 colors.
@@ -155,31 +156,31 @@ public class PlanetGasGiant : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Clouds2.SetMaterialProperty(element.Key, Clouds2Color.Evaluate(element.Value));
+            Clouds2.SetMaterialProperty(element.Key, Clouds2Color.Evaluate(element.Value));
         }
     }
 
     public void UpdateMaterial()
     {
-        _Surface.UpdateMaterial();
-        _Clouds1.UpdateMaterial();
-        _Clouds2.UpdateMaterial();
+        Surface.UpdateMaterial();
+        Clouds1.UpdateMaterial();
+        Clouds2.UpdateMaterial();
     }
 
     public void SetStartTime(float start)
     {
         float time = 10f + start * 60f;
 
-        _Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Clouds1.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Clouds2.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     public void UpdateTime(float time)
     {
-        _Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Clouds1.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Clouds2.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Surface.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Clouds1.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Clouds2.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     private void Update()

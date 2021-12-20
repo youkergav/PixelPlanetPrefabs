@@ -130,7 +130,8 @@ MonoBehaviour:
   Size: 1
   PlanetRotation: 0
   RingRotation: 0
-  Speed: 0.5
+  PlanetSpeed: 0.5
+  RingSpeed: 0.5
   PlanetColor:
     serializedVersion: 2
     key0: {r: 0.93333334, g: 0.7607843, b: 0.6, a: 1}
@@ -191,6 +192,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   PlanetSeed: 1
   RingSeed: 1
+  RingEnabled: 1
   LightOrigin: {x: 0, y: 0.7}
   Pixels: 128
 --- !u!1 &6834058514292936240

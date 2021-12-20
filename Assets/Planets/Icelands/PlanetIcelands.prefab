@@ -309,7 +309,7 @@ MonoBehaviour:
   LightOrigin: {x: 0.3, y: 0.7}
   Pixels: 128
   CloudCover: 0.5
-  WaterFlow: 0.52
+  WaterFlow: 0.5
 --- !u!1 &3295127250887180430
 GameObject:
   m_ObjectHideFlags: 0

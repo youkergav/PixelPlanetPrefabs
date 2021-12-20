@@ -8,8 +8,20 @@ public class PlanetVolcanoesEditor : Editor
         base.OnInspectorGUI();
         PlanetVolcanoes planet = (PlanetVolcanoes)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Land,
+                planet.Craters,
+                planet.Lava,
+                planet.Atmosphere
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetSize(planet.Size);

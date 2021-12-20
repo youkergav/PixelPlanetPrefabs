@@ -26,38 +26,25 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
     [Range(0f, 256)] public int Pixels = 128;
     [Range(0f, 1f)] public float LavaFlow = 0.4f;
 
-    public bool Initiated
+    [HideInInspector] public PlanetLayer Land;
+    [HideInInspector] public PlanetLayer Craters;
+    [HideInInspector] public PlanetLayer Lava;
+    [HideInInspector] public PlanetLayer Atmosphere;
+
+    public bool Initialized
     {
         get
         {
-            return _Initiated;
+            return _Initialized;
         }
     }
 
-    private PlanetLayer _Land;
-    private PlanetLayer _Craters;
-    private PlanetLayer _Lava;
-    private PlanetLayer _Atmosphere;
-
-    private bool _Initiated = false;
+    private bool _Initialized = false;
     private float _Timestamp = 0f;
 
     private void Awake()
     {
-        SpriteRenderer landRenderer = transform.Find("Land").GetComponent<SpriteRenderer>();
-        SpriteRenderer cratersRenderer = transform.Find("Craters").GetComponent<SpriteRenderer>();
-        SpriteRenderer lavaRenderer = transform.Find("Lava").GetComponent<SpriteRenderer>();
-        SpriteRenderer atmosphereRenderer = transform.Find("Atmosphere").GetComponent<SpriteRenderer>();
-
-        Material landMaterial = new Material(landRenderer.sharedMaterial);
-        Material cratersMaterial = new Material(cratersRenderer.sharedMaterial);
-        Material lavaMaterial = new Material(lavaRenderer.sharedMaterial);
-        Material atmosphereMaterial = new Material(atmosphereRenderer.sharedMaterial);
-
-        _Land = new PlanetLayer(gameObject, landRenderer, landMaterial);
-        _Craters = new PlanetLayer(gameObject, cratersRenderer, cratersMaterial);
-        _Lava = new PlanetLayer(gameObject, lavaRenderer, lavaMaterial);
-        _Atmosphere = new PlanetLayer(gameObject, atmosphereRenderer, atmosphereMaterial);
+        _Initialized = Initialize();
 
         SetSeed();
         SetColors();
@@ -69,44 +56,58 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
         EnableCraters(CratersEnabled);
 
         UpdateMaterial();
-        _Initiated = true;
     }
 
-    public bool Is_Initiated()
+    public bool Initialize()
     {
-        return _Initiated;
+        SpriteRenderer landRenderer = transform.Find("Land").GetComponent<SpriteRenderer>();
+        SpriteRenderer cratersRenderer = transform.Find("Craters").GetComponent<SpriteRenderer>();
+        SpriteRenderer lavaRenderer = transform.Find("Lava").GetComponent<SpriteRenderer>();
+        SpriteRenderer atmosphereRenderer = transform.Find("Atmosphere").GetComponent<SpriteRenderer>();
+
+        Material landMaterial = new Material(landRenderer.sharedMaterial);
+        Material cratersMaterial = new Material(cratersRenderer.sharedMaterial);
+        Material lavaMaterial = new Material(lavaRenderer.sharedMaterial);
+        Material atmosphereMaterial = new Material(atmosphereRenderer.sharedMaterial);
+
+        Land = new PlanetLayer(gameObject, landRenderer, landMaterial);
+        Craters = new PlanetLayer(gameObject, cratersRenderer, cratersMaterial);
+        Lava = new PlanetLayer(gameObject, lavaRenderer, lavaMaterial);
+        Atmosphere = new PlanetLayer(gameObject, atmosphereRenderer, atmosphereMaterial);
+
+        return true;
     }
 
     public void SetSeed()
     {
-        _Land.SetMaterialProperty(ShaderProperties.Seed, LandSeed);
-        _Craters.SetMaterialProperty(ShaderProperties.Seed, CratersSeed);
-        _Lava.SetMaterialProperty(ShaderProperties.Seed, LavaSeed);
+        Land.SetMaterialProperty(ShaderProperties.Seed, LandSeed);
+        Craters.SetMaterialProperty(ShaderProperties.Seed, CratersSeed);
+        Lava.SetMaterialProperty(ShaderProperties.Seed, LavaSeed);
 
-        _Lava.SetMaterialProperty(ShaderProperties.FlowRate, LavaFlow);
+        Lava.SetMaterialProperty(ShaderProperties.FlowRate, LavaFlow);
     }
 
     public void SetPixels(float ppu)
     {
-        _Land.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Craters.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Lava.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Land.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Craters.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Lava.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Atmosphere.SetMaterialProperty(ShaderProperties.Pixels, ppu);
     }
 
     public void SetLight(Vector2 position)
     {
-        _Land.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Craters.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Lava.SetMaterialProperty(ShaderProperties.LightOrigin, position);
-        _Atmosphere.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Land.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Craters.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Lava.SetMaterialProperty(ShaderProperties.LightOrigin, position);
+        Atmosphere.SetMaterialProperty(ShaderProperties.LightOrigin, position);
     }
 
     public void SetRotate(float rotation)
     {
-        _Land.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Craters.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Lava.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Land.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Craters.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Lava.SetMaterialProperty(ShaderProperties.Rotation, rotation);
     }
 
     public void SetSize(float size)
@@ -118,9 +119,9 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
 
     public void SetSpeed()
     {
-        _Land.SetMaterialProperty(ShaderProperties.Speed, Speed);
-        _Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);
-        _Lava.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Land.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Craters.SetMaterialProperty(ShaderProperties.Speed, Speed);
+        Lava.SetMaterialProperty(ShaderProperties.Speed, Speed);
     }
 
     public void SetColors()
@@ -136,7 +137,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Land.SetMaterialProperty(element.Key, LandColor.Evaluate(element.Value));
+            Land.SetMaterialProperty(element.Key, LandColor.Evaluate(element.Value));
         }
 
         // Set craters colors.
@@ -147,7 +148,7 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Craters.SetMaterialProperty(element.Key, CratersColor.Evaluate(element.Value));
+            Craters.SetMaterialProperty(element.Key, CratersColor.Evaluate(element.Value));
         }
 
         // Set lava colors.
@@ -159,40 +160,40 @@ public class PlanetVolcanoes : MonoBehaviour, PlanetInterface
 
         foreach (KeyValuePair<string, float> element in colors)
         {
-            _Lava.SetMaterialProperty(element.Key, LavaColor.Evaluate(element.Value));
+            Lava.SetMaterialProperty(element.Key, LavaColor.Evaluate(element.Value));
         }
 
         // Set atmosphere color.
-        _Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
+        Atmosphere.SetMaterialProperty(ShaderProperties.Color, AtmosphereColor);
     }
 
     public void EnableCraters(bool enabled)
     {
-        _Craters.SetEnabled(enabled);
+        Craters.SetEnabled(enabled);
     }
 
     public void UpdateMaterial()
     {
-        _Land.UpdateMaterial();
-        _Craters.UpdateMaterial();
-        _Lava.UpdateMaterial();
-        _Atmosphere.UpdateMaterial();
+        Land.UpdateMaterial();
+        Craters.UpdateMaterial();
+        Lava.UpdateMaterial();
+        Atmosphere.UpdateMaterial();
     }
 
     public void SetStartTime(float start)
     {
         float time = 10f + start * 60f;
 
-        _Land.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Lava.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Land.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Lava.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     public void UpdateTime(float time)
     {
-        _Land.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Lava.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Land.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Craters.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Lava.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
     }
 
     private void Update()

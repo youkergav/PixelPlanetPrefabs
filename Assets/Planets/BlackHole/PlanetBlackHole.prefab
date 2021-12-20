@@ -106,7 +106,6 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
-  HoleSeed: 1
   DiskSeed: 1
   Pixels: 128
 --- !u!1 &4638428435020367824

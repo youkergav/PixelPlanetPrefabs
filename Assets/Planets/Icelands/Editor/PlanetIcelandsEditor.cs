@@ -8,8 +8,20 @@ public class PlanetIcelandsEditor : Editor
         base.OnInspectorGUI();
         PlanetIcelands planet = (PlanetIcelands)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Land,
+                planet.Water,
+                planet.Clouds,
+                planet.Atmosphere
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetSize(planet.Size);

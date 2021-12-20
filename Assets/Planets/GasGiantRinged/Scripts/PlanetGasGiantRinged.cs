@@ -23,30 +23,23 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
     public Vector2 LightOrigin = new Vector2(0.3f, 0.7f);
     [Range(0f, 256)] public int Pixels = 128;
 
-    public bool Initiated
+    [HideInInspector] public PlanetLayer Planet;
+    [HideInInspector] public PlanetLayer Ring;
+
+    public bool Initialized
     {
         get
         {
-            return _Initiated;
+            return _Initialized;
         }
     }
 
-    private PlanetLayer _Planet;
-    private PlanetLayer _Ring;
-
     private float _Timestamp = 0f;
-    private bool _Initiated = false;
+    private bool _Initialized = false;
 
     private void Awake()
     {
-        SpriteRenderer planetRenderer = transform.Find("Planet").GetComponent<SpriteRenderer>();
-        SpriteRenderer ringRenderer = transform.Find("Ring").GetComponent<SpriteRenderer>();
-
-        Material planetMaterial = new Material(planetRenderer.sharedMaterial);
-        Material ringMaterial = new Material(ringRenderer.sharedMaterial);
-
-        _Planet = new PlanetLayer(gameObject, planetRenderer, planetMaterial);
-        _Ring = new PlanetLayer(gameObject, ringRenderer, ringMaterial);
+        _Initialized = Initialize();
 
         SetSeed();
         SetColors();
@@ -57,38 +50,51 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         SetSpeed();
         EnableRing(RingEnabled);
 
-        _Initiated = true;
         UpdateMaterial();
+    }
+
+    public bool Initialize()
+    {
+        SpriteRenderer planetRenderer = transform.Find("Planet").GetComponent<SpriteRenderer>();
+        SpriteRenderer ringRenderer = transform.Find("Ring").GetComponent<SpriteRenderer>();
+
+        Material planetMaterial = new Material(planetRenderer.sharedMaterial);
+        Material ringMaterial = new Material(ringRenderer.sharedMaterial);
+
+        Planet = new PlanetLayer(gameObject, planetRenderer, planetMaterial);
+        Ring = new PlanetLayer(gameObject, ringRenderer, ringMaterial);
+
+        return true;
     }
 
     public void SetSeed()
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Seed, PlanetSeed);
-        _Ring.SetMaterialProperty(ShaderProperties.Seed, RingSeed);
+        Planet.SetMaterialProperty(ShaderProperties.Seed, PlanetSeed);
+        Ring.SetMaterialProperty(ShaderProperties.Seed, RingSeed);
     }
 
     public void SetPixels(float ppu)
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Pixels, ppu);
-        _Ring.SetMaterialProperty(ShaderProperties.Pixels, ppu * 3f);
+        Planet.SetMaterialProperty(ShaderProperties.Pixels, ppu);
+        Ring.SetMaterialProperty(ShaderProperties.Pixels, ppu * 3f);
     }
 
     public void SetLight(Vector2 position)
     {
-        _Planet.SetMaterialProperty(ShaderProperties.LightOrigin, position * 1.3f);
-        _Ring.SetMaterialProperty(ShaderProperties.LightOrigin, position * 1.3f);
+        Planet.SetMaterialProperty(ShaderProperties.LightOrigin, position * 1.3f);
+        Ring.SetMaterialProperty(ShaderProperties.LightOrigin, position * 1.3f);
     }
 
     public void SetRotate()
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Rotation, PlanetRotation);
-        _Ring.SetMaterialProperty(ShaderProperties.Rotation, RingRotation);
+        Planet.SetMaterialProperty(ShaderProperties.Rotation, PlanetRotation);
+        Ring.SetMaterialProperty(ShaderProperties.Rotation, RingRotation);
     }
 
     public void SetRotate(float rotation)
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Rotation, rotation);
-        _Ring.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Planet.SetMaterialProperty(ShaderProperties.Rotation, rotation);
+        Ring.SetMaterialProperty(ShaderProperties.Rotation, rotation);
     }
 
     public void SetSize(float size)
@@ -100,8 +106,8 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
 
     public void SetSpeed()
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Speed, PlanetSpeed);
-        _Ring.SetMaterialProperty(ShaderProperties.Speed, RingSpeed);
+        Planet.SetMaterialProperty(ShaderProperties.Speed, PlanetSpeed);
+        Ring.SetMaterialProperty(ShaderProperties.Speed, RingSpeed);
     }
 
     public void SetColors()
@@ -136,8 +142,8 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         }
         gradientDark.SetKeys(colorKey, alphaKey);
 
-        _Planet.SetMaterialProperty(ShaderProperties.GradientTex2, PlanetUtil.GenTexture(gradientLight));
-        _Planet.SetMaterialProperty(ShaderProperties.GradientTex3, PlanetUtil.GenTexture(gradientDark));
+        Planet.SetMaterialProperty(ShaderProperties.GradientTex2, PlanetUtil.GenTexture(gradientLight));
+        Planet.SetMaterialProperty(ShaderProperties.GradientTex3, PlanetUtil.GenTexture(gradientDark));
 
         // Set the planet colors.
         oldTimes = new float[3] { 0f, 0.2f, .4f };
@@ -162,33 +168,33 @@ public class PlanetGasGiantRinged : MonoBehaviour, PlanetInterface
         }
         gradientDark.SetKeys(colorKey, alphaKey);
 
-        _Ring.SetMaterialProperty(ShaderProperties.GradientTex2, PlanetUtil.GenTexture(gradientLight));
-        _Ring.SetMaterialProperty(ShaderProperties.GradientTex3, PlanetUtil.GenTexture(gradientDark));
+        Ring.SetMaterialProperty(ShaderProperties.GradientTex2, PlanetUtil.GenTexture(gradientLight));
+        Ring.SetMaterialProperty(ShaderProperties.GradientTex3, PlanetUtil.GenTexture(gradientDark));
     }
 
     public void EnableRing(bool enabled)
     {
-        _Ring.SetEnabled(enabled);
+        Ring.SetEnabled(enabled);
     }
 
     public void UpdateMaterial()
     {
-        _Planet.UpdateMaterial();
-        _Ring.UpdateMaterial();
+        Planet.UpdateMaterial();
+        Ring.UpdateMaterial();
     }
 
     public void SetStartTime(float start)
     {
         float time = 10f + start * 60f;
 
-        _Planet.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Ring.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f * -3f);
+        Planet.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Ring.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f * -3f);
     }
 
     public void UpdateTime(float time)
     {
-        _Planet.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
-        _Ring.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f * -3f);
+        Planet.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f);
+        Ring.SetMaterialProperty(ShaderProperties.Timestamp, time * 0.5f * -3f);
     }
 
     private void Update()

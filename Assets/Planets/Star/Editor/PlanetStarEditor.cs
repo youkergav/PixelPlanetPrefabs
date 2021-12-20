@@ -8,8 +8,19 @@ public class PlanetStarEditor : Editor
         base.OnInspectorGUI();
         PlanetStar planet = (PlanetStar)target;
 
-        if (planet.Initiated)
+        if (planet.Initialized)
         {
+            PlanetLayer[] layers = {
+                planet.Surface,
+                planet.Flares,
+                planet.Emission
+            };
+
+            if (System.Array.Exists(layers, element => element == null))
+            {
+                planet.Initialize();
+            }
+
             planet.SetSeed();
             planet.SetColors();
             planet.SetSize(planet.Size);
