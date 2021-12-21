@@ -3,7 +3,7 @@
 
 
 ## Overview
-This is Unity project based off of the [Pixel Planet Generator][1] project by [Deep-Fold][2]. Instead of exporting spiresheets, planets are set with prefabs so they can be loaded in a scene dynamically.
+This is Unity project based off of the [Pixel Planet Generator][1] project by [Deep-Fold][2]. Instead of exporting spritesheets, planets are set with prefabs so they can be loaded in a scene dynamically.
 
 I am no Unity expert so please open up issues (or make pull requests!). Available under MIT license. Credit is appreciated, but not required.
 
