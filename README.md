@@ -27,7 +27,7 @@ Planets can be controlled by dropping the prefab in your scene (`Assets/Planets/
 ### Planet-specific Properties
 | Property        | Planet                            | Description                        |
 |-----------------|-----------------------------------|------------------------------------|
-| Cloud Cover     | Continents, Gas Giant, Iclends    | Amount of clouds convering surface |
+| Cloud Cover     | Continents, Gas Giant, Icelands   | Amount of clouds convering surface |
 | Water Flow      | Continents, Icelands              | Amount of water convering surface  |
 | Water Flow      | Volcanoes                         | Amount of lava convering surface   |
 | Ring Enabled    | Gas Giant Ringed                  | Show/hide ring layer               |
