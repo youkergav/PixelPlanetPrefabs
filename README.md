@@ -1,5 +1,5 @@
 # Pixel Planet Prefabs
-![Alt text](https://media2.giphy.com/media/xYbC8YWgfcT2G7g7lb/giphy.gif?cid=790b761177f315980f99ecbde880251ad4163716fe4812d8&rid=giphy.gif "Pixel Planet Prefabs")
+![Alt text](https://i.imgur.com/2TttBpM.png "Pixel Planet Prefabs")
 
 
 ## Overview
